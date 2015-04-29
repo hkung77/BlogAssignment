@@ -36,7 +36,7 @@ def detail(request, ID="0"):
     except blogposts.id.DoesNotExists:
         # If primary key does not exists, blog is not in the database
         raise CommandError('blog post with '+ID+' does not exists in database')
-        logger.error('Attempting to access blog post with '+ID'. Error: ' +ID+' does not exists')
+        logger.error('Attempting to access blog post with '+ID+'. Error: ' +ID+' does not exists')
     # Set post.html as the template
     template = loader.get_template('blog/post.html')        
 
