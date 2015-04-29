@@ -51,10 +51,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+		    <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="www.hkung.me">About</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -68,52 +68,35 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../../static/blog/image/home_bg.jpg')">
-        	<div class="container">
-            		<div class="row">
-                		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    			<div class="site-heading">
-                        			<h1>Henry Kung</h1>
-                        			<hr class="small">
-                        			<span class="subheading">My Blog </span>
-                    			</div>
-                		</div>
-            		</div>
-        	</div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-		{% if blog_list%}
-		{% for blog in blog_list %}
-                <div class="post-preview">
-			<a href="{% url 'detail' blog.id %}">
-                        <h2 class="post-title">
-				{{ blog.Title }}
-                        </h2>
-                        <h3 class="post-subtitle">
-				{{ blog.Description }}
-                        </h3>
-                    </a>
-		    <p class="post-meta">Posted by <a href="hkung.me"> Henry Kung</a> on {{ blog.Pub_date }}</p>
+    <header class="intro-header" style="background-image: url('../../static/blog/image/post_bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+			{% if blog %}
+			<h1>{{ blog.Title }}</h1>
+			<h2 class="subheading">{{ blog.Description }}</h2>
+			<span class="meta">Posted by <a href="#">Henry Kung</a> on {{ blog.Pub_date }}</span>
+                    </div>
                 </div>
-                <hr>
-		{% endfor %}
-		{% endif %}
-                
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
             </div>
         </div>
-    </div>
+    </header>
 
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div class="embed-responsive embed-responsive-16by9">			
+				<iframe charset="ANSII" class="embed-responsive-item" src="{% static blog.Text_link %}"></iframe>
+			</div>
+                </div>
+            </div>
+        </div>
+    </article>
     <hr>
+    {% endif %}
 
     <!-- Footer -->
     <footer>
@@ -146,7 +129,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Henry 2014</p>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
                 </div>
             </div>
         </div>
