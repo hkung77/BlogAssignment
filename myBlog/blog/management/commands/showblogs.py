@@ -1,9 +1,13 @@
 from django.core.management.base import BaseCommand, CommandError
 from blog.models import blogposts
+import logging
 
 class Command(BaseCommand):
     # showall will display all the entries in the blog
     help = 'Displays all entries in the blog'
+
+    # Get an instance of a logger
+    logger = logging.getLogger(__name__)
 
     def handle(self, *args, **options):
         try: 
@@ -11,6 +15,7 @@ class Command(BaseCommand):
             blog_list = blogposts.objects.all()
         except blogposts.DoesNotExist:
             raise CommandError('blogposts does not exists') 
+            logger.error('Attempting to access blopposts. Error: blogposts database does not exists')
 
         # Set table template {column numer : width size}
         template = "{0:5} | {1:25} | {2:5} | {3:6} | {4:3} | {5:50}"
