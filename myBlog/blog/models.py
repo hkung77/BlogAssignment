@@ -10,5 +10,3 @@ class blogposts(models.Model):
     Description = models.CharField(max_length=200)
     # Link to the text file of the post (stored in static directory)
     Text_link = models.CharField(max_length=200)
-    # Link to the image file of the post (stored in static directory)
-    Image_link = models.CharField(max_length=200)
