@@ -26,10 +26,10 @@ models.py
 ---------
 This blog has a single model called blogposts.
 Here are the data fields for the model :
-    Title         : CharField with max size of 200
-    Pub_date      : DateTimeField
-    Description   : CharField with max size of 200
-    Text_link     : CharField with max size of 200
+Title         : CharField with max size of 200
+Pub_date      : DateTimeField
+Description   : CharField with max size of 200
+Text_link     : CharField with max size of 200
     
 --------
 views.py
