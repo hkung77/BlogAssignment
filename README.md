@@ -6,18 +6,20 @@ Created using Django, and Bootstrap.
 ----------
 HTML Files
 ----------
-index.html  : - shows the title and a short description of each blog post in a list view
-              - blogs are sorted by date published
+index.html   
+- shows the title and a short description of each blog post in a list view
+- blogs are sorted by date published
               
-post.html   : shows individual blog posts including the title, date of publication, and the content
+post.html    
+- shows individual blog posts including the title, date of publication, and the content
 
 --------------------------------
 Customized django-admin commands
 --------------------------------
-showblogs.py : 
-  HOW TO RUN : python manage.py showblogs
-    - This function displays all blog posts stored in the database in a well formated table. 
-    - The table is formatted in this order:   ID | Title | Year | Month | Date | Text Link
+showblogs.py  
+HOW TO RUN : python manage.py showblogs
+- This function displays all blog posts stored in the database in a well formated table. 
+- The table is formatted in this order:   ID | Title | Year | Month | Date | Text Link
 
 ---------    
 models.py 
