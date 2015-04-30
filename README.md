@@ -25,7 +25,7 @@ HOW TO RUN : python manage.py showblogs
 models.py 
 ---------
 This blog has a single model called blogposts.
-Here are the data fields for the model :
+Here are the data fields for the model
 Title         : CharField with max size of 200
 Pub_date      : DateTimeField
 Description   : CharField with max size of 200
